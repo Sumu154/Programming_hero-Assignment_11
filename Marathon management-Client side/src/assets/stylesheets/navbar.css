@@ -1,0 +1,23 @@
+.menu li > *:not(ul, .menu-title, details, .btn):active, 
+.menu li > *:not(ul, .menu-title, details, .btn).active, 
+.menu li > details > summary:active {
+  background-color: #FCF8EC;
+  color: black;
+  opacity: .9;
+}
+
+
+.dark .menu li > *:not(ul, .menu-title, details, .btn):active,
+.dark .menu li > *:not(ul, .menu-title, details, .btn).active,
+.dark .menu li > details > summary:active {
+  background-color: #333333;  /* Dark background */
+  color: #FCF8EC;  /* Light text for dark mode */
+  opacity: .9;
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn){
+  opacity: .6;
+}
+
+
+

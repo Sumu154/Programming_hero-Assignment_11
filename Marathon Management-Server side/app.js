@@ -16,12 +16,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const port = process.env.PORT || 3000;
 
+const marathonRoutes = require('./routes/marathonRoutes');
+const registrationRoutes = require('./routes/registrationRoutes')
+
 app.get('/', (req, res) => {
   res.send('hello......chill pill marathon cholbe');
 })
 
-
 // api routes from database
+app.use('/api', marathonRoutes);
+app.use('/api', registrationRoutes);
 
 
 
