@@ -1,18 +1,19 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Header/Navbar'
-import ThemeToggle from './components/shared/ThemeToggle'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
   return (
     <>
-      <div className='bg-lightyellow'>
-        hiiiiiiiii
+      <div className='font-Poppins bg-lightyellow   dark:bg-darkbackground'>
         <Navbar></Navbar>
-        <ThemeToggle></ThemeToggle>
+        <Outlet></Outlet>
+        <Footer></Footer>
       </div>
     </>
   )
 }
 
-export default App
+export default App;

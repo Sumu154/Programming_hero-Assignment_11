@@ -11,12 +11,12 @@ export default {
         'sm': '460px',
       },
       fontFamily: {
-        'Lato': "Lato",
+        'Poppins': "Poppins",
         'Roboto': "Roboto Slab",
       },
       colors: {
         'background': '#F4F8F8',
-        'darkbackground': '#1C1C1C',
+        'darkbackground': '#1D1D1D',
         'cardbackground': '#2A2A2A',
         'footerbackground': '#121212',
         'blue': '#1E88E5',

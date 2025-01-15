@@ -1,0 +1,7 @@
+#slide1{
+  background: 
+  linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), /* Gradient overlay */
+  url('../images/banner2.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+}

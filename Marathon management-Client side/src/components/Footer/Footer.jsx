@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="bg-white mt-20 text-sm md:text-base      dark:bg-footerbackground dark:text-white">
-      <div className="text-blacktext py-12 mt-8 max-w-[680px] mx-auto">
-        <h2 className="text-orange font-bold text-center text-base sm:text-2xl"> Crowd Funding </h2>
+    <div className="bg-darkyellow mt-20 text-sm md:text-base     ">
+      <div className="text-black py-12 mt-8 max-w-[680px] mx-auto">
+        <h2 className="text-magenta font-bold text-center text-base sm:text-2xl"> Marathon Hub </h2>
         <p className="opacity-70 text-center mx-5"> Uniting runners and enthusiasts worldwide by providing seamless access to marathons and events. </p>
         <div className="flex flex-col md:flex-row gap-6 md:gap-0 justify-between pt-10">
           <div className="text-center">

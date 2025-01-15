@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
-  const [ theme, setTheme ] = useState(localStorage.getItem('theme'));
+  const [ theme, setTheme ] = useState(localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     document.documentElement.className = theme;
     localStorage.setItem('theme', theme);
-  }, []);
+  }, [theme]);
 
 
   const toggleTheme = () => {
