@@ -12,7 +12,6 @@ const marathonSchema = new mongoose.Schema({
   description: String,
   createdAt: Date,
   regCount: Number
-
 })
 
 module.exports = mongoose.model('Marathon', marathonSchema);

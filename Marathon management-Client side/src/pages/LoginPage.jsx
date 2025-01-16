@@ -1,9 +1,10 @@
 import React from 'react';
+import LoginForm from '../components/AuthComponents/LoginForm';
 
 const LoginPage = () => {
   return (
-    <div>
-      
+    <div  className='h-screen'>
+      <LoginForm></LoginForm>
     </div>
   );
 };

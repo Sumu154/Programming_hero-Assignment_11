@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
-
+import axios from "axios";
 
 // layout imports
 import App from "../App";
@@ -21,6 +21,8 @@ import RegisterPage from "../pages/RegisterPage";
 
 // import componnets
 import Error from '../components/shared/Error'
+import PrivateRoute from "./PrivateRoute";
+import MarathonDetailsPage from "../pages/MarathonDetailsPage";
 
 
 
@@ -35,15 +37,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/allMarathons',
-        element: <MarathonsPage></MarathonsPage>
+        element: <PrivateRoute> <MarathonsPage></MarathonsPage> </PrivateRoute>,
       },
       {
-        path: '/marathon/:id',
-        element: <MarathonDetails></MarathonDetails>
+        path: '/marathons/:id',
+        element: <PrivateRoute> <MarathonDetailsPage></MarathonDetailsPage> </PrivateRoute>,
+        loader: async ( {params} ) => {
+          const res = await axios(`http://localhost:3000/api/marathons/${params.id}`);
+          const marathon =  res.data;
+          return marathon;
+        }
       },
       {
         path: '/addMarathon',
-        element: <AddMarathons></AddMarathons>
+        element: <PrivateRoute> <AddMarathons></AddMarathons> </PrivateRoute> ,
       },
       {
         path: '/myMarathons',

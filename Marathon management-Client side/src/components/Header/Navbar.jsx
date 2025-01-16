@@ -9,7 +9,7 @@ import ThemeToggle from '../shared/ThemeToggle';
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
-  // console.log(user);
+  // console.log('user', user.photoURL);
 
   const navigate = useNavigate();
   const path = useLocation().pathname;
@@ -28,8 +28,6 @@ const Navbar = () => {
 
 
 
-
-
   const links = <>
     <li> <NavLink to="/"> Home </NavLink> </li>
     <li> <NavLink to="/allMarathons"> All Marathons</NavLink> </li>
@@ -42,19 +40,19 @@ const Navbar = () => {
     <div className="navbar w-[90%] mx-auto  ">
       <div className="navbar-start">
         <div className="dropdown  ">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden  dark:text-white">
             <svg xmlns="http://www.w3.org/2000/svg"  className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabIndex={0}  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow    dark:bg-cardbackground">
+          <ul tabIndex={0}  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow    dark:bg-cardbackground dark:text-white">
             {links}
           </ul>
         </div>
         <Link to='/' className="text-magenta text-base sm:text-2xl font-bold"> Marathon Hub </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1   dark:text-white">
           {links}
         </ul>
       </div>
@@ -62,7 +60,7 @@ const Navbar = () => {
         <ThemeToggle></ThemeToggle>
         {user ? <div className='flex gap-4 items-center'>
           <button className='text-orange font-medium px-4 py-[6px] rounded-lg border-orange border-[1px] '> <Link onClick={handleSignOut} to=''> Logout </Link> </button> 
-          <div className='text-xl text-white h-8 w-8 bg-orange rounded-full flex justify-center items-center'>  {user.displayName?.charAt(0).toUpperCase()} </div> 
+           <div className='h-9 w-9'>  <img className='rounded-full' src={user.photoURL} alt="" /> </div> 
         </div> 
         :<div className='flex gap-4'>
           <button className={`font-medium px-4 py-[6px] rounded-lg     ${path==='/auth/login' ? 'bg-orange text-white' : 'text-orange border-orange border-[1px]'} `}> <Link to='/auth/login'> Login </Link> </button> 

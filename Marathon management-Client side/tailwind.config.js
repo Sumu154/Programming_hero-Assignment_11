@@ -15,9 +15,9 @@ export default {
         'Roboto': "Roboto Slab",
       },
       colors: {
-        'background': '#F4F8F8',
-        'darkbackground': '#1D1D1D',
-        'cardbackground': '#2A2A2A',
+        'background': '#FEF9A7',
+        'darkbackground': '#2C2C2C',
+        'cardbackground': '#333333',
         'footerbackground': '#121212',
         'blue': '#1E88E5',
         'pink': '#FF4081',

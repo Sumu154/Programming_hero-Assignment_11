@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className='font-Poppins bg-lightyellow   dark:bg-darkbackground'>
+      <div className='font-Poppins bg-background   dark:bg-darkbackground'>
         <Navbar></Navbar>
         <Outlet></Outlet>
         <Footer></Footer>

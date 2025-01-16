@@ -5,3 +5,12 @@
   background-size: cover;
   background-position: center;
 }
+
+#marathon{
+  background: 
+  linear-gradient(180deg, rgba(244, 157, 26, 0.7) 0%, rgba(244, 157, 26, .1) 100%), /* Gradient overlay */
+  url('../images/marathonbanner.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+}
+
