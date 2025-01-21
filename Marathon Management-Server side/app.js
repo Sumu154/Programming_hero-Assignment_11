@@ -9,7 +9,11 @@ const app = express();
 
 app.set('View engine', 'ejs');
 app.use(cors({
-  origin: ['http://localhost:5173'],
+  origin: [
+    'http://localhost:5173',
+    'marathon-management-953e9.firebaseapp.com',
+    'marathon-management-953e9.web.app'
+  ],
   credentials: true,
 }));
 app.use(express.json());
