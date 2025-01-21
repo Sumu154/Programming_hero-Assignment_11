@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
-import { toast } from 'react-toastify';
+
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
@@ -11,16 +10,16 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import '../../assets/stylesheets/marathon.css'
 
-const AddMarathonForm = () => {
-  const { user } = useContext(AuthContext);
-  const email = user.email;
+
+const UpdateMarathonForm = ( { marathon } ) => {
+  const { _id:id, email, regCount } = marathon;
 
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [dates, setDates] = useState({});
 
 
-  const handleAddMarathon = async (e) => {
+  const handleUpdateMarathon = async (e) => {
     e.preventDefault();
 
     // get the form data
@@ -35,22 +34,21 @@ const AddMarathonForm = () => {
     const description = form.get('description');
 
     const createdAt = new Date().toISOString();
-    const regCount = 0;
 
     const marathon = { title, marathonStart, regStart, regEnd, email, location, distance, image, description, createdAt, regCount };
     console.log(marathon)
     
     // database e store korte hbe
-    const res = await axios.post('http://localhost:3000/api/marathons', marathon, {
+    const res = await axios.put(`http://localhost:3000/api/marathons/${id}`, marathon, {
       headers: {
         'Content-Type': 'application/json',
       },
-      withCredentials: true,
+      withCredentials: true
     });
     console.log(res.data);
 
     Swal.fire({
-      title: "Marathon added successfully!",
+      title: "Marathon updated successfully!",
       icon: "success",
       customClass: {
         popup: 'small-modal'
@@ -69,8 +67,8 @@ const AddMarathonForm = () => {
 
   return (
     <div className='max-w-[600px] mx-auto bg-white mt-14   dark:bg-cardbackground'>
-      <h3 className='pt-6 text-center font-semibold opacity-80 text-2xl md:text-3xl   dark:text-white   '> Add New Marathon </h3>
-      <form onSubmit={handleAddMarathon} className="card-body">
+      <h3 className='pt-6 text-center font-semibold opacity-80 text-2xl md:text-3xl   dark:text-white   '> Update  Marathon </h3>
+      <form onSubmit={handleUpdateMarathon} className="card-body">
         {/* first row */}
         <div className='flex justify-between    '>
           <div className="form-control w-[49%] ">
@@ -151,11 +149,11 @@ const AddMarathonForm = () => {
 
         {/* add button */}
         <div className="form-control mt-6">
-          <button className="btn text-white text-base md:text-lg font-medium border-none bg-magenta hover:bg-magenta opacity-90 hover:opacity-100"> Add campaign </button>
+          <button className="btn text-white text-base md:text-lg font-medium border-none bg-magenta hover:bg-magenta opacity-90 hover:opacity-100"> Update campaign </button>
         </div>
       </form>
     </div>
   );
 };
 
-export default AddMarathonForm;
+export default UpdateMarathonForm;

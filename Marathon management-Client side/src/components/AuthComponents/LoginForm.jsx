@@ -5,6 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-toastify';
 import { PiEye, PiEyeClosed } from "react-icons/pi";
 import { FcGoogle } from "react-icons/fc";
+import axios from 'axios';
 
 
 const LoginForm = () => {
@@ -27,6 +28,10 @@ const LoginForm = () => {
     try{
       const res = await signInUser(email, password);
       const user = res.user;
+
+      const res2 = await axios.post('http://localhost:3000/api/jwt', email, {withCredentials: true});
+      console.log(res2.data);
+
       setUser(user);
       navigate('/');
       toast.success('Successfully logged in!', {

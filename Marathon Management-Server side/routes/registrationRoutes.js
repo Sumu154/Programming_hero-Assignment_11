@@ -1,16 +1,19 @@
 const express = require('express');
-const { createRegistration, getRegistrations, getRegistrationsByEmail, updateRegistration, deleteRegistration } = require('../controllers/registrationController');
 const router = express.Router();
+const { createRegistration, getRegistrations, getRegistrationById, getRegistrationsByEmail, updateRegistration, deleteRegistration } = require('../controllers/registrationController');
+const { verifyToken } = require('../middlewares/authMiddleware')
 
 // route for creating registration
-router.post('/registrations', createRegistration);
+router.post('/registrations', verifyToken, createRegistration);
 // router for getting registration
-router.get('/registrations', getRegistrations);
+router.get('/registrations', verifyToken, getRegistrations);
+// get marathon by id
+router.get('/registrations/:id', verifyToken, getRegistrationById);
 // router getting registrations by email
-router.get('/registrations', getRegistrationsByEmail);
+router.get('/myRegistrations', verifyToken, getRegistrationsByEmail);
 // router updating registration
-router.put('/registrations/:id', updateRegistration);
+router.put('/registrations/:id', verifyToken, updateRegistration);
 // router deleting registration
-router.delete('/registrations/:id', deleteRegistration);
+router.delete('/registrations/:marathon_id', verifyToken, deleteRegistration);
 
 module.exports = router;

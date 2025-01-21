@@ -37,7 +37,8 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="navbar w-[90%] mx-auto  ">
+    <div id='navbar' className='bg-background  dark:bg-darkbackground shadow-lg'>
+      <div  className="navbar w-[90%] mx-auto  ">
       <div className="navbar-start">
         <div className="dropdown  ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden  dark:text-white">
@@ -69,20 +70,10 @@ const Navbar = () => {
         } 
       </div>
     </div>
+    </div>
   );
 };
 
 export default Navbar;
 
 
-// import React from 'react';
-
-// const Navbar = () => {
-//   return (
-//     <div>
-//        hi i am navbar
-//     </div>
-//   );
-// };
-
-// export default Navbar;

@@ -20,4 +20,11 @@
 }
 
 
+#navbar {
+ position:sticky; /* Ensures it stays above other elements */
+ top: 0;
+ z-index: 1000;
+}
+
+
 

@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Header/Navbar'
 import Footer from './components/Footer/Footer'
 
+
 function App() {
 
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar></Navbar>
         <Outlet></Outlet>
         <Footer></Footer>
+        {/* <CountdownTimer></CountdownTimer> */}
       </div>
     </>
   )

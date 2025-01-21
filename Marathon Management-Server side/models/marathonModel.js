@@ -7,6 +7,7 @@ const marathonSchema = new mongoose.Schema({
   regStart: Date,
   regEnd: Date,
   marathonStart: Date,
+  email: String,
   location: String,
   distance: String,
   description: String,

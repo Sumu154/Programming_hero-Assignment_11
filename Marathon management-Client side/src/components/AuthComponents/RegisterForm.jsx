@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 
 // utils import
 import { validPassword } from '../../Utils/Validators/passValidator'
+import axios from 'axios';
 
 // https://i.ibb.co.com/23zmrZ5/5ad22761b9cf4196abba9a20dcc50c61.webp
 
@@ -43,6 +44,13 @@ const RegisterForm = () => {
     // register kore fellam -> firebase
     try{
       const res = await createNewUser(email, password);
+      console.log(res.user);
+
+      // token create korlam
+      const res2 = await axios.post('http://localhost:3000/api/jwt', email, {withCredentials: true});
+      console.log(res2.data);
+
+      // update kore dibo
       await updateUserProfile({
         displayName: name,
         photoURL: photo,
@@ -67,15 +75,12 @@ const RegisterForm = () => {
     }
 
     // database e add korbo ekhn
-    // const res = await fetch('https://server-side-backend.vercel.app/api/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(user),
-    // })
-    // const data = await res.json();
-    //console.log(data);
+    const res = await axios.post('http://localhost:3000/api/users', user, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    console.log(res.data);
   }
 
 
