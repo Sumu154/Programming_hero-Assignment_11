@@ -47,7 +47,7 @@ const RegisterForm = () => {
       console.log(res.user);
 
       // token create korlam
-      const res2 = await axios.post('http://localhost:3000/api/jwt', email, {withCredentials: true});
+      const res2 = await axios.post('https://marathon-management-server-side.vercel.app/api/jwt', email, {withCredentials: true});
       console.log(res2.data);
 
       // update kore dibo
@@ -75,7 +75,7 @@ const RegisterForm = () => {
     }
 
     // database e add korbo ekhn
-    const res = await axios.post('http://localhost:3000/api/users', user, {
+    const res = await axios.post('https://marathon-management-server-side.vercel.app/api/users', user, {
       headers: {
         'Content-Type': 'application/json',
       },

@@ -18,7 +18,7 @@ const MyApplyListTable = () => {
 
   useEffect(() => {
     const fetchMyRegistrations = async () => {
-      const res = await axios.get(`http://localhost:3000/api/myRegistrations?email=${email}`, {withCredentials: true });
+      const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/myRegistrations?email=${email}`, {withCredentials: true });
       console.log(res.data);
       setMyRegistrations(res.data);
     }
@@ -44,7 +44,7 @@ const MyApplyListTable = () => {
       const marathonData = await Promise.all(
         marathonsWithRegisterId.map(async (it) => {
           console.log(it.marathon_id, it.registration_id);
-          const res = await axios.get(`http://localhost:3000/api/marathons/${it.marathon_id}`, { withCredentials: true });
+          const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/marathons/${it.marathon_id}`, { withCredentials: true });
           return {
             ...res.data, // Marathon details -> jeta database theke pailam
             registration_id: it.registration_id, // Include registration ID
@@ -78,7 +78,7 @@ const MyApplyListTable = () => {
   
     if(alert.isConfirmed){
       // registrations databse theke delete
-      const res = await axios.delete(`http://localhost:3000/api/registrations/${registration_id}`, { withCredentials: true });
+      const res = await axios.delete(`https://marathon-management-server-side.vercel.app/api/registrations/${registration_id}`, { withCredentials: true });
       console.log(res.data);
       if(res.status===200){
         await Swal.fire({

@@ -39,7 +39,7 @@ const UpdateMarathonForm = ( { marathon } ) => {
     console.log(marathon)
     
     // database e store korte hbe
-    const res = await axios.put(`http://localhost:3000/api/marathons/${id}`, marathon, {
+    const res = await axios.put(`https://marathon-management-server-side.vercel.app/api/marathons/${id}`, marathon, {
       headers: {
         'Content-Type': 'application/json',
       },

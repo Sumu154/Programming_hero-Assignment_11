@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         path: '/marathons/:id',
         element: <PrivateRoute> <MarathonDetailsPage></MarathonDetailsPage> </PrivateRoute>,
         loader: async ( {params} ) => {
-          const res = await axios.get(`http://localhost:3000/api/marathons/${params.id}`, {withCredentials: true});
+          const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/marathons/${params.id}`, {withCredentials: true});
           const marathon =  res.data;
           return marathon;
         }
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         path: '/updateMarathon/:id',
         element: <PrivateRoute> <UpdateMarathonPage></UpdateMarathonPage> </PrivateRoute>,
         loader: async ( {params} ) => {
-          const res = await axios.get(`http://localhost:3000/api/marathons/${params.id}`, {withCredentials: true});
+          const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/marathons/${params.id}`, {withCredentials: true});
           const marathon = res.data;
           return marathon;
         }
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <UpdateRegistrationPage></UpdateRegistrationPage> </PrivateRoute>,
         loader: async ( {params} ) => {
           console.log(params.id);
-          const res = await axios.get(`http://localhost:3000/api/registrations/${params.id}`, { withCredentials: true });
+          const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/registrations/${params.id}`, { withCredentials: true });
           const registration = res.data;
           return registration;
         }

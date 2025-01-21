@@ -41,7 +41,7 @@ const AddMarathonForm = () => {
     console.log(marathon)
     
     // database e store korte hbe
-    const res = await axios.post('http://localhost:3000/api/marathons', marathon, {
+    const res = await axios.post('https://marathon-management-server-side.vercel.app/api/marathons', marathon, {
       headers: {
         'Content-Type': 'application/json',
       },

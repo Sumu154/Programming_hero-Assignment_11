@@ -7,7 +7,7 @@ const UpcomingMarathons = () => {
 
   useEffect(() => {
     const fetchMarathons = async () => {
-      const res = await axios.get('http://localhost:3000/api/marathons/upcoming');
+      const res = await axios.get('https://marathon-management-server-side.vercel.app/api/marathons/upcoming');
       setMarathons(res.data);
     }
     fetchMarathons();

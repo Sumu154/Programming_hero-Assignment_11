@@ -19,13 +19,13 @@ const AllMarathonCards = () => {
       console.log(sortOrder);
       if(sortOrder===''){
         console.log('all marathons');
-        const res = await axios.get('http://localhost:3000/api/marathons', {withCredentials: true});
+        const res = await axios.get('https://marathon-management-server-side.vercel.app/api/marathons', {withCredentials: true});
 
         setMarathons(res.data);
       }
       else{
         console.log('its sorted')
-        const res = await axios.get(`http://localhost:3000/api/sortedMarathons?sort=${sortOrder}`, {withCredentials: true});
+        const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/sortedMarathons?sort=${sortOrder}`, {withCredentials: true});
         setMarathons(res.data);
         console.log(res.data);
       }

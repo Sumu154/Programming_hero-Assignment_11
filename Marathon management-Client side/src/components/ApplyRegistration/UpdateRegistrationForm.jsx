@@ -24,7 +24,7 @@ const UpdateRegistrationForm = ( { registration } ) => {
     console.log(registered)
 
     // database e add korbo
-    const res = await axios.put(`http://localhost:3000/api/registrations/${id}`, registered, {
+    const res = await axios.put(`https://marathon-management-server-side.vercel.app/api/registrations/${id}`, registered, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -33,7 +33,7 @@ const UpdateRegistrationForm = ( { registration } ) => {
     console.log(res.data);
 
     // regCount increment korte hbe -> update er khtere kora lagbe na
-    // const res2 = axios.patch(`http://localhost:3000/api/marathons/${marathon_id}`, {}, {
+    // const res2 = axios.patch(`https://marathon-management-server-side.vercel.app/api/marathons/${marathon_id}`, {}, {
     //   headers: {
     //     'Content-Type': 'application/json',
     //   },

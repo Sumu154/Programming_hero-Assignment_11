@@ -14,7 +14,7 @@ const MyMarathonTable = () => {
 
   useEffect(() => {
     const fetchMyMarathons = async () => {
-      const res = await axios.get(`http://localhost:3000/api/myMarathons?email=${email}`, {withCredentials: true});
+      const res = await axios.get(`https://marathon-management-server-side.vercel.app/api/myMarathons?email=${email}`, {withCredentials: true});
       setMyMarathons(res.data);
     }
     fetchMyMarathons();
@@ -43,9 +43,9 @@ const MyMarathonTable = () => {
 
       // Add your delete logic here, if any
       // caMpaigns database theke delete
-      const res1 = await axios.delete(`http://localhost:3000/api/marathons/${id}`, { withCredentials: true });
+      const res1 = await axios.delete(`https://marathon-management-server-side.vercel.app/api/marathons/${id}`, { withCredentials: true });
       // donatedUser databse theke delete
-      const res2 = await axios.delete(`http://localhost:3000/api/registrations/${id}`, { withCredentials: true });
+      const res2 = await axios.delete(`https://marathon-management-server-side.vercel.app/api/registrations/${id}`, { withCredentials: true });
 
       if(res1.status === 200 && res2.status === 200){
         setMyMarathons(MyMarathons.filter(it => it._id !== id));

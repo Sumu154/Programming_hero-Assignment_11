@@ -7,7 +7,7 @@ const SeeMarathons = () => {
 
   useEffect(() => {
     const fetchMarathons = async () => {
-      const res = await axios.get('http://localhost:3000/api/marathons/limited');
+      const res = await axios.get('https://marathon-management-server-side.vercel.app/api/marathons/limited');
       setMarathons(res.data);
     }
     fetchMarathons();
