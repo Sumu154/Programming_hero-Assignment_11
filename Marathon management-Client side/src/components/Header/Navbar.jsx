@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import ThemeToggle from '../shared/ThemeToggle';
+import axios from 'axios';
 
 
 
@@ -18,6 +19,11 @@ const Navbar = () => {
     e.preventDefault();
     try{
       await signOutUser();
+
+      // token clear
+      const res2 = await axios.post('https://marathon-management-server-side.vercel.app/api/jwt/logout', {}, {withCredentials: true});
+      console.log(res2.data);
+
       navigate('/auth/login');
     }
     catch(e){

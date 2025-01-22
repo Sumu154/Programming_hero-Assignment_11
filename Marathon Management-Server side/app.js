@@ -11,8 +11,8 @@ app.set('View engine', 'ejs');
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'marathon-management-953e9.firebaseapp.com',
-    'marathon-management-953e9.web.app'
+    'https://marathon-management-953e9.firebaseapp.com',
+    'https://marathon-management-953e9.web.app'
   ],
   credentials: true,
 }));

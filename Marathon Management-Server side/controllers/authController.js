@@ -2,16 +2,28 @@ const userModel = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 // const cookieParser = require('cookie-parser');
 
+const cookieOptions = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "strict",
+};
 
 const createToken = (req, res) => {
   const email = req.body;
   const token = jwt.sign(email, process.env.JWT_SECRET, {expiresIn: '24h'});
   res.cookie('token', token, {
-    httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
+   ...cookieOptions
   });
   res.send('successfully token generated');
+}
+
+
+// clear the cookie while logout
+const clearToken = (req, res) => {
+  res.clearCookie('token', {
+    ...cookieOptions,
+  });
+  res.send('Successfully logged out and cookie removed')
 }
 
 
@@ -26,4 +38,4 @@ const getToken = (req, res) => {
   }
 }
 
-module.exports = { createToken, getToken };
+module.exports = { createToken, clearToken, getToken };
