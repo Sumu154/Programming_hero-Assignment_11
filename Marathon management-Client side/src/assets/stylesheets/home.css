@@ -6,6 +6,22 @@
   background-position: center;
 }
 
+#slide2{
+  background: 
+  linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), /* Gradient overlay */
+  url('../images/banner1.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+}
+
+#slide3{
+  background: 
+  linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), /* Gradient overlay */
+  url('../images/banner.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+}
+
 #marathon{
   background: 
   linear-gradient(180deg, rgba(244, 157, 26, 0.7) 0%, rgba(244, 157, 26, .1) 100%), /* Gradient overlay */

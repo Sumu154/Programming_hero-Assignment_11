@@ -123,7 +123,7 @@ const RegisterForm = () => {
           <label className="label"> <span className="label-text">Password</span> </label>
           <div className='flex flex-row-reverse items-center'>
             <input name='password' type={passwordType} placeholder="password" className="input input-bordered w-full" required />
-            <span onClick={togglePasswordType} className='absolute mr-4'> {passwordType==='password' ? <PiEyeClosed /> : <PiEye /> }  </span>
+            <span onClick={togglePasswordType} className='absolute mr-4'> {passwordType==='password' ? <PiEye />  : <PiEyeClosed /> }  </span>
           </div>
         </div>
 

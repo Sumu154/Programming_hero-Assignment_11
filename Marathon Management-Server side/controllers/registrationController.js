@@ -77,10 +77,10 @@ const updateRegistration = async (req, res) => {
 // delete registration information
 const deleteRegistration = async (req, res) => {
   try{
-    const marathon_id = req.params.id;
-    // console.log(marathon_id);
+    const id = req.params.id;
+    console.log(id);
 
-    const deletedRegistration = await registrationModel.deleteMany(marathon_id);
+    const deletedRegistration = await registrationModel.findByIdAndDelete(id);
     res.status(200).json(deletedRegistration);
   }
   catch(e){

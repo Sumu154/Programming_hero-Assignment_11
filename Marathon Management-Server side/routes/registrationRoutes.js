@@ -14,6 +14,6 @@ router.get('/myRegistrations', verifyToken, getRegistrationsByEmail);
 // router updating registration
 router.put('/registrations/:id', verifyToken, updateRegistration);
 // router deleting registration
-router.delete('/registrations/:marathon_id', verifyToken, deleteRegistration);
+router.delete('/registrations/:id', verifyToken, deleteRegistration);
 
 module.exports = router;
