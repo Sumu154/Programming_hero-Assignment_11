@@ -86,6 +86,7 @@ const AddMarathonForm = () => {
               dateFormat="dd-MM-yyyy"
               placeholderText="Select a date"
               className="input input-bordered w-full"
+              required 
             />
           </div>
         </div>
@@ -100,6 +101,7 @@ const AddMarathonForm = () => {
               dateFormat="dd-MM-yyyy"
               placeholderText="Select a date"
               className="input input-bordered w-full"
+              required 
             />
           </div>
           <div className="form-control w-[49%] ">
@@ -111,6 +113,7 @@ const AddMarathonForm = () => {
               dateFormat="dd-MM-yyyy"
               placeholderText="Select a date"
               className="input input-bordered w-full"
+              required 
             />
           </div>
         </div>
@@ -151,7 +154,7 @@ const AddMarathonForm = () => {
 
         {/* add button */}
         <div className="form-control mt-6">
-          <button className="btn text-white text-base md:text-lg font-medium border-none bg-magenta hover:bg-magenta opacity-90 hover:opacity-100"> Add campaign </button>
+          <button className="btn text-white text-base md:text-lg font-medium border-none bg-magenta hover:bg-magenta opacity-90 hover:opacity-100"> Add marathon </button>
         </div>
       </form>
     </div>

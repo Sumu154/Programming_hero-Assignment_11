@@ -7,6 +7,7 @@ import {formatDate} from '../../Utils/Formatters/dateFormatter.js'
 
 const MarathonCard = ( { marathon } ) => {
   const {  _id:id, title, image, regStart, regEnd, marathonStart, location, distance, description, regCount } = marathon;
+  console.log('in cards', regStart, regEnd);
 
   return (
     <div className='border-black dark:border-[#444444] border-[1px] border-opacity-15 rounded-md p-3 hover:border-magenta hover:border-opacity-50 hover:p-2  dark:bg-cardbackground '>

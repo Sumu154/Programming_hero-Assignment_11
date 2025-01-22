@@ -18,6 +18,7 @@ const MarathonDetails = () => {
 
   const marathon = useLoaderData();
   const {  _id:id, title, image, regStart, regEnd, marathonStart, location, distance, description, regCount } = marathon;
+  console.log('in details', regStart, regEnd);
 
   const [ status, setStatus ] = useState('');
   const [timeLeft, setTimeLeft] = useState('wait..');
